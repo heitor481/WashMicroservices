@@ -29,6 +29,8 @@ namespace Providers.Infra
                 b.HasKey(p => p.Id);
                 b.Property(p => p.Name).IsRequired();
             });
+
+            modelBuilder.Seed();
         }
     }
 }
