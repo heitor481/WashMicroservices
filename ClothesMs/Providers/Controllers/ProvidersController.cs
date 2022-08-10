@@ -2,6 +2,7 @@
 using Providers.Domain;
 using Providers.Repositories;
 using Providers.Repositories.HttpRequest;
+using Providers.Repositories.HttpRequest.Dto;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -14,17 +15,14 @@ namespace Providers.Controllers
     public class ProvidersController : ControllerBase
     {
         private readonly IProvidersRepository _providersRepository;
-        private readonly IDriverHttpClient _driverHttpClient;
 
-        public ProvidersController(IProvidersRepository providersRepository, 
-            IDriverHttpClient driverHttpClient)
+        public ProvidersController(IProvidersRepository providersRepository)
         {
             _providersRepository = providersRepository;
-            _driverHttpClient = driverHttpClient;
         }
 
         // GET: api/<ProvidersController>
-        [HttpGet("/getAllProviders")]
+        [HttpGet]
         public async Task<IEnumerable<Provider>> GetAllProviders()
         {
             return await _providersRepository.GetAllProvidersAvailable();

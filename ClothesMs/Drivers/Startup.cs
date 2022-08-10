@@ -1,4 +1,5 @@
 using Drivers.Infra;
+using Drivers.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -25,7 +26,8 @@ namespace Drivers
             services.AddDbContext<DriversDBContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("Default")));
 
-            
+            services.AddTransient<DriversDBContext>();
+            services.AddScoped<IDriverRepository, DriverRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

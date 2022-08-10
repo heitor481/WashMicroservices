@@ -30,6 +30,8 @@ namespace Drivers.Infra
                 b.Property(p => p.Name).IsRequired();
                 b.Property(p => p.Surname).IsRequired();
             });
+
+            modelBuilder.Seed();
         }
     }
 }
