@@ -10,5 +10,6 @@ namespace WashClothes.Domain
         public string Color { get; set; }
 
         public ClotheType Type { get; set; }
+        public int UserId { get; set; }
     }
 }

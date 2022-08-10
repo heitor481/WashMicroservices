@@ -17,6 +17,7 @@ namespace WashClothes.Infra
         }
 
         public DbSet<Clothes> Clothes { get; set; }
+        public DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -29,6 +30,8 @@ namespace WashClothes.Infra
                 b.HasKey(p => p.Id);
                 b.Property(p => p.Color).IsRequired();
             });
+
+            modelBuilder.Entity<User>().HasMany<Clothes>(u => u.Clothes).WithOne().HasForeignKey(c => c.UserId);
 
             modelBuilder.Seed();
         }
