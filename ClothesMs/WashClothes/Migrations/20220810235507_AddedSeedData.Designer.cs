@@ -9,8 +9,8 @@ using WashClothes.Infra;
 namespace WashClothes.Migrations
 {
     [DbContext(typeof(CothesDBContext))]
-    [Migration("20220810032707_AddedSeed")]
-    partial class AddedSeed
+    [Migration("20220810235507_AddedSeedData")]
+    partial class AddedSeedData
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -34,7 +34,12 @@ namespace WashClothes.Migrations
                     b.Property<int>("Type")
                         .HasColumnType("int");
 
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Clothes");
 
@@ -43,20 +48,62 @@ namespace WashClothes.Migrations
                         {
                             Id = 1,
                             Color = "Red",
-                            Type = 4
+                            Type = 4,
+                            UserId = 1
                         },
                         new
                         {
                             Id = 2,
                             Color = "Blue",
-                            Type = 1
+                            Type = 1,
+                            UserId = 1
                         },
                         new
                         {
                             Id = 3,
                             Color = "Green",
-                            Type = 0
+                            Type = 0,
+                            UserId = 1
                         });
+                });
+
+            modelBuilder.Entity("WashClothes.Domain.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Age")
+                        .HasColumnType("int");
+
+                    b.Property<string>("FullName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Age = 30,
+                            FullName = "Test",
+                            UserName = "Test"
+                        });
+                });
+
+            modelBuilder.Entity("WashClothes.Domain.Clothes", b =>
+                {
+                    b.HasOne("WashClothes.Domain.User", null)
+                        .WithMany("Clothes")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
