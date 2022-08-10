@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Providers.Domain;
 using Providers.Repositories;
+using Providers.Repositories.HttpRequest;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -12,50 +14,20 @@ namespace Providers.Controllers
     public class ProvidersController : ControllerBase
     {
         private readonly IProvidersRepository _providersRepository;
+        private readonly IDriverHttpClient _driverHttpClient;
 
-        public ProvidersController(IProvidersRepository providersRepository)
+        public ProvidersController(IProvidersRepository providersRepository, 
+            IDriverHttpClient driverHttpClient)
         {
             _providersRepository = providersRepository;
+            _driverHttpClient = driverHttpClient;
         }
 
         // GET: api/<ProvidersController>
-        [HttpGet]
-        public IEnumerable<Provider> Get()
+        [HttpGet("/getAllProviders")]
+        public async Task<IEnumerable<Provider>> GetAllProviders()
         {
-            return new List<Provider>() 
-            {
-                new Provider() 
-                {
-                    Name = "Lavabo",
-                    Location = "Marco Bruto 1306",
-                    Price = 14,
-                    Id = 1
-                },
-
-                new Provider()
-                {
-                    Name = "Lavabo 2",
-                    Location = "Marco Bruto 1306",
-                    Price = 15,
-                    Id = 2
-                },
-
-                new Provider()
-                {
-                    Name = "Lavabo 3",
-                    Location = "Marco Bruto 1306",
-                    Price = 16,
-                    Id = 3
-                },
-
-                new Provider()
-                {
-                    Name = "Lavabo 4",
-                    Location = "Marco Bruto 1306",
-                    Price = 17,
-                    Id = 4
-                },
-            };
+            return await _providersRepository.GetAllProvidersAvailable();
         }
 
         // GET api/<ProvidersController>/5

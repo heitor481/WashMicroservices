@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using WashClothes.Infra;
+using WashClothes.Repositories.HttpRequest;
 
 namespace WashClothes
 {
@@ -22,8 +23,13 @@ namespace WashClothes
         {
             services.AddRazorPages();
 
+            services.AddHttpClient();
+
             services.AddDbContext<CothesDBContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("Default")));
+
+            services.AddTransient<CothesDBContext>();
+            services.AddScoped<IProvidersHttpClient, ProvidersHttpClient>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
