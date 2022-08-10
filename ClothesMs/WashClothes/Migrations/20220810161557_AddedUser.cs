@@ -6,10 +6,6 @@ namespace WashClothes.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropColumn(
-                name: "User",
-                table: "Clothes");
-
             migrationBuilder.AddColumn<int>(
                 name: "UserId",
                 table: "Clothes",
@@ -87,12 +83,6 @@ namespace WashClothes.Migrations
             migrationBuilder.DropColumn(
                 name: "UserId",
                 table: "Clothes");
-
-            migrationBuilder.AddColumn<string>(
-                name: "User",
-                table: "Clothes",
-                type: "nvarchar(max)",
-                nullable: true);
         }
     }
 }

@@ -31,7 +31,10 @@ namespace WashClothes.Infra
                 b.Property(p => p.Color).IsRequired();
             });
 
-            modelBuilder.Entity<User>().HasMany<Clothes>(u => u.Clothes).WithOne().HasForeignKey(c => c.UserId);
+            modelBuilder.Entity<User>(b =>
+            {
+                b.HasMany(p => p.Clothes).WithOne().OnDelete(DeleteBehavior.Cascade);
+            });
 
             modelBuilder.Seed();
         }

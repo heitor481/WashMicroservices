@@ -5,6 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20220810140835_AddedUser.cs" />
+    <Compile Remove="Migrations\20220810140835_AddedUser.Designer.cs" />
+    <Compile Remove="Migrations\20220810160441_AddedUser.cs" />
+    <Compile Remove="Migrations\20220810160441_AddedUser.Designer.cs" />
+    <Compile Remove="Migrations\20220810161105_AddedUser.cs" />
+    <Compile Remove="Migrations\20220810161105_AddedUser.Designer.cs" />
+    <Compile Remove="Migrations\20220810161348_AddedUser.cs" />
+    <Compile Remove="Migrations\20220810161348_AddedUser.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="EntityFramework" Version="6.4.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.28" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.28" />

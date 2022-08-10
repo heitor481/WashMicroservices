@@ -9,7 +9,7 @@ using WashClothes.Infra;
 namespace WashClothes.Migrations
 {
     [DbContext(typeof(CothesDBContext))]
-    [Migration("20220810140835_AddedUser")]
+    [Migration("20220810161557_AddedUser")]
     partial class AddedUser
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
