@@ -29,6 +29,8 @@ namespace WashClothes.Infra
                 b.HasKey(p => p.Id);
                 b.Property(p => p.Color).IsRequired();
             });
+
+            modelBuilder.Seed();
         }
     }
 }
