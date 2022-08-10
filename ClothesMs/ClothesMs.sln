@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WashClothes", "WashClothes\WashClothes.csproj", "{4E4994B7-4EA0-449E-8319-D5E2D2378BBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Providers", "Providers\Providers.csproj", "{33221A02-E397-43D9-830B-152FE183C06A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drivers", "Drivers\Drivers.csproj", "{83404AA6-5445-4802-90DC-C796D6168CE2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4E4994B7-4EA0-449E-8319-D5E2D2378BBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E4994B7-4EA0-449E-8319-D5E2D2378BBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E4994B7-4EA0-449E-8319-D5E2D2378BBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E4994B7-4EA0-449E-8319-D5E2D2378BBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33221A02-E397-43D9-830B-152FE183C06A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33221A02-E397-43D9-830B-152FE183C06A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33221A02-E397-43D9-830B-152FE183C06A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33221A02-E397-43D9-830B-152FE183C06A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83404AA6-5445-4802-90DC-C796D6168CE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83404AA6-5445-4802-90DC-C796D6168CE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83404AA6-5445-4802-90DC-C796D6168CE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83404AA6-5445-4802-90DC-C796D6168CE2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {87B18F19-AD42-493F-A1DD-584AD36C1FDC}
+	EndGlobalSection
+EndGlobal
