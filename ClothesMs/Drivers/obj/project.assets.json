@@ -1495,6 +1495,23 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "Providers/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "3.1.28",
+          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.28"
+        },
+        "compile": {
+          "bin/placeholder/Providers.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Providers.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
@@ -5702,13 +5719,19 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "Providers/1.0.0": {
+      "type": "project",
+      "path": "../Providers/Providers.csproj",
+      "msbuildProject": "../Providers/Providers.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Microsoft.EntityFrameworkCore >= 3.1.28",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.28",
-      "Microsoft.EntityFrameworkCore.Tools >= 3.1.28"
+      "Microsoft.EntityFrameworkCore.Tools >= 3.1.28",
+      "Providers >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -5741,7 +5764,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Avell\\workspace\\ClothesMs\\ClothesMs\\Providers\\Providers.csproj": {
+              "projectPath": "C:\\Users\\Avell\\workspace\\ClothesMs\\ClothesMs\\Providers\\Providers.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

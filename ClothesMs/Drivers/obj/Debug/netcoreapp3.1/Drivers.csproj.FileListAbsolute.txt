@@ -58,3 +58,10 @@ C:\Users\Avell\workspace\ClothesMs\ClothesMs\Drivers\obj\Debug\netcoreapp3.1\Dri
 C:\Users\Avell\workspace\ClothesMs\ClothesMs\Drivers\obj\Debug\netcoreapp3.1\Drivers.dll
 C:\Users\Avell\workspace\ClothesMs\ClothesMs\Drivers\obj\Debug\netcoreapp3.1\Drivers.pdb
 C:\Users\Avell\workspace\ClothesMs\ClothesMs\Drivers\obj\Debug\netcoreapp3.1\Drivers.genruntimeconfig.cache
+C:\Users\Avell\workspace\ClothesMs\ClothesMs\Drivers\bin\Debug\netcoreapp3.1\Providers.deps.json
+C:\Users\Avell\workspace\ClothesMs\ClothesMs\Drivers\bin\Debug\netcoreapp3.1\Providers.runtimeconfig.json
+C:\Users\Avell\workspace\ClothesMs\ClothesMs\Drivers\bin\Debug\netcoreapp3.1\Providers.runtimeconfig.dev.json
+C:\Users\Avell\workspace\ClothesMs\ClothesMs\Drivers\bin\Debug\netcoreapp3.1\Providers.exe
+C:\Users\Avell\workspace\ClothesMs\ClothesMs\Drivers\bin\Debug\netcoreapp3.1\Providers.dll
+C:\Users\Avell\workspace\ClothesMs\ClothesMs\Drivers\bin\Debug\netcoreapp3.1\Providers.pdb
+C:\Users\Avell\workspace\ClothesMs\ClothesMs\Drivers\obj\Debug\netcoreapp3.1\Drivers.MvcApplicationPartsAssemblyInfo.cs

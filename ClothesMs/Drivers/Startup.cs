@@ -7,6 +7,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Providers.Infra;
+using Providers.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +32,9 @@ namespace Drivers
 
             services.AddDbContext<DriversDBContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("Default")));
+
+            services.AddTransient<ProvidersDBContext>();
+            services.AddScoped<IProvidersRepository, ProvidersRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
