@@ -58,6 +58,10 @@ namespace WashClothes
             {
                 endpoints.MapRazorPages();
                 endpoints.MapControllers();
+                endpoints.MapControllerRoute
+                (
+                    name: "default",
+                    pattern: "{controller=Wash}/{action=providers}");
             });
         }
     }

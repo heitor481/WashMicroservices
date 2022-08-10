@@ -11,7 +11,7 @@ namespace WashClothes.Repositories.HttpRequest
 		private readonly IHttpClientFactory _httpClientFactory;
 		private readonly JsonSerializerOptions _options;
 
-		private const string ProvidersApi = "http://localhost:31288/api/providers/getAllProviders";
+		private const string ProvidersApi = "http://localhost:31288/api/providers";
 
 		public ProvidersHttpClient(IHttpClientFactory httpClientFactory)
 		{

@@ -4,6 +4,7 @@ using Providers.Repositories;
 using Providers.Repositories.HttpRequest;
 using Providers.Repositories.HttpRequest.Dto;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -15,10 +16,12 @@ namespace Providers.Controllers
     public class ProvidersController : ControllerBase
     {
         private readonly IProvidersRepository _providersRepository;
+        private readonly IDriverHttpClient _driverHttpClient;
 
-        public ProvidersController(IProvidersRepository providersRepository)
+        public ProvidersController(IProvidersRepository providersRepository, IDriverHttpClient driverHttpClient)
         {
             _providersRepository = providersRepository;
+            _driverHttpClient = driverHttpClient;
         }
 
         // GET: api/<ProvidersController>
@@ -26,6 +29,20 @@ namespace Providers.Controllers
         public async Task<IEnumerable<Provider>> GetAllProviders()
         {
             return await _providersRepository.GetAllProvidersAvailable();
+        }
+
+        [HttpGet]
+        [Route("[action]")]
+        public async Task<Driver> Drivers()
+        {
+            var drivers = await _driverHttpClient.GetDriver();
+
+            if (drivers == null || drivers.Count <= 0)
+            {
+                return null;
+            }
+
+            return drivers.FirstOrDefault();
         }
 
         // GET api/<ProvidersController>/5

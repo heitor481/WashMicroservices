@@ -55,6 +55,9 @@ namespace Providers
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Providers}/{action=drivers}");
             });
         }
     }
