@@ -1,0 +1,60 @@
+{
+	"info": {
+		"_postman_id": "9105e9cc-c2f5-482b-8d6f-4b37051573ff",
+		"name": "WashClothes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetClothesByUser",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{host_main}}/api/wash/1",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{host_main}}"
+					],
+					"path": [
+						"api",
+						"wash",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetProviders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "Order",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{host_main}}/api/wash/1/providers/1",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{host_main}}"
+					],
+					"path": [
+						"api",
+						"wash",
+						"1",
+						"providers",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
