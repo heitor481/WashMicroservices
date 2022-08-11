@@ -20,12 +20,19 @@ namespace Providers.Repositories.HttpRequest
 
 		public async Task<List<Driver>> GetDriver()
 		{
-			var client = _httpClientFactory.CreateClient();
-			using var response = await client.GetAsync(DriverApiConst);
-			response.EnsureSuccessStatusCode();
-			var stream = await response.Content.ReadAsStreamAsync();
-			var drivers = await JsonSerializer.DeserializeAsync<List<Driver>>(stream, _options);
-			return drivers;
+			try
+			{
+				var client = _httpClientFactory.CreateClient();
+				using var response = await client.GetAsync(DriverApiConst);
+				response.EnsureSuccessStatusCode();
+				var stream = await response.Content.ReadAsStreamAsync();
+				var drivers = await JsonSerializer.DeserializeAsync<List<Driver>>(stream, _options);
+				return drivers;
+			}
+			catch
+			{
+				throw;
+			}
 		}
 	}
 }
