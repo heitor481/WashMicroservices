@@ -7,6 +7,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Providers.Infra;
+using Providers.Repositories;
+using Providers.Repositories.HttpRequest;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,8 +30,14 @@ namespace Providers
         {
             services.AddControllers();
 
+            services.AddHttpClient();
+
             services.AddDbContext<ProvidersDBContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("Default")));
+
+            services.AddTransient<ProvidersDBContext>();
+            services.AddScoped<IProvidersRepository, ProvidersRepository>();
+            services.AddScoped<IDriverHttpClient, DriversHttpClient>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,6 +55,9 @@ namespace Providers
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Providers}/{action=drivers}");
             });
         }
     }

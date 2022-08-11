@@ -5,6 +5,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using WashClothes.Infra;
+using WashClothes.Repositories;
+using WashClothes.Repositories.HttpRequest;
 
 namespace WashClothes
 {
@@ -20,10 +22,18 @@ namespace WashClothes
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddControllers();
             services.AddRazorPages();
+
+            services.AddHttpClient();
 
             services.AddDbContext<CothesDBContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("Default")));
+
+            services.AddTransient<CothesDBContext>();
+            services.AddScoped<IProvidersHttpClient, ProvidersHttpClient>();
+            services.AddScoped<IWashClothesRepository, WashClothesRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,6 +57,11 @@ namespace WashClothes
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
+                endpoints.MapControllers();
+                endpoints.MapControllerRoute
+                (
+                    name: "default",
+                    pattern: "{controller=Wash}/{action=providers}");
             });
         }
     }

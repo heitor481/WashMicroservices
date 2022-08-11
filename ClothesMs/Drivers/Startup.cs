@@ -1,22 +1,15 @@
 using Drivers.Infra;
+using Drivers.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Providers.Infra;
-using Providers.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Drivers
 {
-    public class Startup
+	public class Startup
     {
         public Startup(IConfiguration configuration)
         {
@@ -33,8 +26,8 @@ namespace Drivers
             services.AddDbContext<DriversDBContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("Default")));
 
-            services.AddTransient<ProvidersDBContext>();
-            services.AddScoped<IProvidersRepository, ProvidersRepository>();
+            services.AddTransient<DriversDBContext>();
+            services.AddScoped<IDriverRepository, DriverRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
