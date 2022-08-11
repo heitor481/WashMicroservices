@@ -10,6 +10,8 @@ namespace WashClothes.Repositories
 
 		Task<List<Clothes>> GetClothesByUser(int userId);
 
+		Task<User> GetUser(int userId);
+
 		Task<Clothes> GetClotheById(int clotheId);
 	}
 }

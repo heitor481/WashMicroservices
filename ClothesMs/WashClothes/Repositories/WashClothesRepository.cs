@@ -32,6 +32,11 @@ namespace WashClothes.Repositories
 				.Where(c => c.UserId == userId).ToListAsync();
         }
 
-		
+        public async Task<User> GetUser(int userId)
+        {
+			return await _cothesDBContext.Users
+				.Include(u => u.Clothes)
+				.SingleOrDefaultAsync(u => u.Id == userId);
+		}
     }
 }

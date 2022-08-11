@@ -55,6 +55,13 @@ namespace WashClothes.Controllers
 				return null;
 			}
 
+			var user = await _washClothesRepository.GetUser(clothe.UserId);
+
+			if (user == null) 
+			{
+				return null;
+			}
+
 			var provider = await _providersHttpClient.GenerateOrder(providerId);
 
 			if (provider == null) 
@@ -67,7 +74,8 @@ namespace WashClothes.Controllers
 				DriverName = provider.DriverName,
 				DriverSurname = provider.DriverSurname,
 				ProviderName = provider.ProviderName,
-				Price = provider.Price
+				Price = provider.Price,
+				Username = user.FullName,
 			};
 
 			return objToRetur;
