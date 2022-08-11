@@ -46,9 +46,10 @@ namespace WashClothes.Controllers
 
 		// GET api/<WashController>/5
 		[HttpGet("{id}")]
-		public string Get(int id)
+		public async Task<IEnumerable<Clothes>> Get(int id)
 		{
-			return "value";
+			var usrClothes = await _washClothesRepository.GetClothesByUser(id);
+			return usrClothes;
 		}
 
 		// POST api/<WashController>

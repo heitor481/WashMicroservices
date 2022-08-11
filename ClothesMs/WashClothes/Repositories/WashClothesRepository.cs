@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using WashClothes.Domain;
 using WashClothes.Infra;
+using System.Linq;
 
 namespace WashClothes.Repositories
 {
@@ -19,5 +20,11 @@ namespace WashClothes.Repositories
 		{
 			return await _cothesDBContext.Clothes.ToListAsync();
 		}
-	}
+
+        public async Task<List<Clothes>> GetClothesByUser(int userId)
+        {
+			return await _cothesDBContext.Clothes
+				.Where(c => c.UserId == userId).ToListAsync();
+        }
+    }
 }

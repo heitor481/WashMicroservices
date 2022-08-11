@@ -9,5 +9,7 @@ namespace WashClothes.Repositories
 	public interface IWashClothesRepository
 	{
 		Task<List<Clothes>> GetAllClothesAvailables();
+
+		Task<List<Clothes>> GetClothesByUser(int userId);
 	}
 }
