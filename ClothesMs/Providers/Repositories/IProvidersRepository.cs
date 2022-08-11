@@ -7,5 +7,7 @@ namespace Providers.Repositories
     public interface IProvidersRepository
     {
         Task<List<Provider>> GetAllProvidersAvailable();
+
+        Task<Provider> GetProviderById(int id);
     }
 }

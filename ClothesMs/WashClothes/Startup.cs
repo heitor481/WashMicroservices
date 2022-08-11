@@ -62,6 +62,11 @@ namespace WashClothes
                 (
                     name: "default",
                     pattern: "{controller=Wash}/{action=providers}");
+
+                endpoints.MapControllerRoute
+                (
+                    name: "provider",
+                    pattern: "{controller=Wash}/{clotheId}/{action=providers}/{providerId}");
             });
         }
     }

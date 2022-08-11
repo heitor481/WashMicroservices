@@ -134,3 +134,4 @@ C:\Users\hribeiro\worskpace\WashMicroservices\ClothesMs\Drivers\obj\Debug\netcor
 C:\Users\hribeiro\worskpace\WashMicroservices\ClothesMs\Drivers\obj\Debug\netcoreapp3.1\Drivers.dll
 C:\Users\hribeiro\worskpace\WashMicroservices\ClothesMs\Drivers\obj\Debug\netcoreapp3.1\Drivers.pdb
 C:\Users\hribeiro\worskpace\WashMicroservices\ClothesMs\Drivers\obj\Debug\netcoreapp3.1\Drivers.genruntimeconfig.cache
+C:\Users\Avell\workspace\ClothesMs\ClothesMs\Drivers\bin\Debug\netcoreapp3.1\AutoMapper.dll

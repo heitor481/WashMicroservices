@@ -6,6 +6,8 @@ namespace WashClothes.Repositories.HttpRequest
 {
 	public interface IProvidersHttpClient
 	{
-		Task<List<Provider>> GetAllProvidersAvailables(); 
+		Task<List<Provider>> GetAllProvidersAvailables();
+
+		Task<OrderClotheDto> GenerateOrder(int providerId);
 	}
 }

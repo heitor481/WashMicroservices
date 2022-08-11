@@ -28,5 +28,16 @@ namespace WashClothes.Repositories.HttpRequest
 			var providers = await JsonSerializer.DeserializeAsync<List<Provider>>(stream, _options);
 			return providers;
 		}
-	}
+
+        public async Task<OrderClotheDto> GenerateOrder(int providerId)
+        {
+			var httpClient = _httpClientFactory.CreateClient();
+			var route = ProvidersApi + "/" + providerId;
+			using var response = await httpClient.GetAsync(route, HttpCompletionOption.ResponseHeadersRead);
+			response.EnsureSuccessStatusCode();
+			var stream = await response.Content.ReadAsStreamAsync();
+			var providers = await JsonSerializer.DeserializeAsync<OrderClotheDto>(stream, _options);
+			return providers;
+		}
+    }
 }

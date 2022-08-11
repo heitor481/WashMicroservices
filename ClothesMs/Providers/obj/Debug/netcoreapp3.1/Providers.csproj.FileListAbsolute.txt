@@ -120,3 +120,4 @@ C:\Users\hribeiro\worskpace\WashMicroservices\ClothesMs\Providers\obj\Debug\netc
 C:\Users\hribeiro\worskpace\WashMicroservices\ClothesMs\Providers\obj\Debug\netcoreapp3.1\Providers.dll
 C:\Users\hribeiro\worskpace\WashMicroservices\ClothesMs\Providers\obj\Debug\netcoreapp3.1\Providers.pdb
 C:\Users\hribeiro\worskpace\WashMicroservices\ClothesMs\Providers\obj\Debug\netcoreapp3.1\Providers.genruntimeconfig.cache
+C:\Users\Avell\workspace\ClothesMs\ClothesMs\Providers\bin\Debug\netcoreapp3.1\AutoMapper.dll

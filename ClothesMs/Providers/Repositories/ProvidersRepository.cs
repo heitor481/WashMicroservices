@@ -20,5 +20,10 @@ namespace Providers.Repositories
         {
             return await _providersDBContext.Providers.ToListAsync();
         }
+
+        public async Task<Provider> GetProviderById(int id)
+        {
+            return await _providersDBContext.Providers.FirstOrDefaultAsync(x => x.Id == id);
+        }
     }
 }

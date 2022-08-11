@@ -21,10 +21,17 @@ namespace WashClothes.Repositories
 			return await _cothesDBContext.Clothes.ToListAsync();
 		}
 
+        public async Task<Clothes> GetClotheById(int clotheId)
+        {
+			return await _cothesDBContext.Clothes.FirstOrDefaultAsync(x => x.Id == clotheId);
+        }
+
         public async Task<List<Clothes>> GetClothesByUser(int userId)
         {
 			return await _cothesDBContext.Clothes
 				.Where(c => c.UserId == userId).ToListAsync();
         }
+
+		
     }
 }

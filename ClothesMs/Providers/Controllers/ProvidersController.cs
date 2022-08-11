@@ -47,9 +47,31 @@ namespace Providers.Controllers
 
         // GET api/<ProvidersController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<OrderClothe> Get(int id)
         {
-            return "value";
+            var provider = await _providersRepository.GetProviderById(id);
+
+            if (provider == null) 
+            {
+                return null;
+            }
+
+            var driver = await _driverHttpClient.GetDriver();
+
+            if (driver == null) 
+            {
+                return null;
+            }
+
+            var orderClothe = new OrderClothe
+            {
+                DriverName = driver.FirstOrDefault().Name,
+                DriverSurname = driver.FirstOrDefault().Surname,
+                ProviderName = provider.Name,
+                Price = provider.Price
+            };
+
+            return orderClothe;
         }
 
         // POST api/<ProvidersController>

@@ -44,6 +44,35 @@ namespace WashClothes.Controllers
 			return null;
 		}
 
+		[HttpGet]
+		[Route("{clotheId}/providers/{providerId}")]
+		public async Task<OrderClotheDto> CompleteOrder(int clotheId, int providerId)
+		{
+			var clothe = await _washClothesRepository.GetClotheById(clotheId);
+
+			if (clothe == null) 
+			{
+				return null;
+			}
+
+			var provider = await _providersHttpClient.GenerateOrder(providerId);
+
+			if (provider == null) 
+			{
+				return null;
+			}
+
+			var objToRetur = new OrderClotheDto
+			{
+				DriverName = provider.DriverName,
+				DriverSurname = provider.DriverSurname,
+				ProviderName = provider.ProviderName,
+				Price = provider.Price
+			};
+
+			return objToRetur;
+		}
+
 		// GET api/<WashController>/5
 		[HttpGet("{id}")]
 		public async Task<IEnumerable<Clothes>> Get(int id)
