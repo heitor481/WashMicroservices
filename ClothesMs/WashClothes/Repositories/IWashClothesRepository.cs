@@ -11,5 +11,7 @@ namespace WashClothes.Repositories
 		Task<List<Clothes>> GetAllClothesAvailables();
 
 		Task<List<Clothes>> GetClothesByUser(int userId);
+
+		Task<User> GetUser(int userId);
 	}
 }
