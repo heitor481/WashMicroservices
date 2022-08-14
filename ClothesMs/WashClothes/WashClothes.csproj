@@ -25,4 +25,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Pages\Wash\" />
+    <Folder Include="wwwroot\images\" />
+  </ItemGroup>
+
 </Project>

@@ -5,6 +5,73 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Wash your clothes!</h1>
+</div>
+
+<button id="btnDisplayClothes" class="cta">
+  <span>Choose you clothes</span>
+  <svg viewBox="0 0 13 10" height="10px" width="15px">
+    <path d="M1,5 L11,5"></path>
+    <polyline points="8 1 12 5 8 9"></polyline>
+  </svg>
+</button>
+
+<div id="clothes" class="list-item" style="display:none;">
+    <section class="splide" aria-label="Clothes">
+        <div class="splide__track">
+            <ul class="splide__list">
+            </ul>
+        </div>
+    </section>
+</div>
+
+
+<button id="btnDispalyProviders" class="cta" style="display:none;">
+  <span>Find available providers</span>
+  <svg viewBox="0 0 13 10" height="10px" width="15px">
+    <path d="M1,5 L11,5"></path>
+    <polyline points="8 1 12 5 8 9"></polyline>
+  </svg>
+</button>
+
+<div id="providers" class="list-item" style="display:none;">
+    <section class="splide" aria-label="Clothes">
+        <div class="splide__track">
+            <ul class="splide__list">
+            </ul>
+        </div>
+</section>
+</div>
+
+
+<button id="btnGenerateOrder" class="cta" style="display:none;">
+  <span>Generate order</span>
+  <svg viewBox="0 0 13 10" height="10px" width="15px">
+    <path d="M1,5 L11,5"></path>
+    <polyline points="8 1 12 5 8 9"></polyline>
+  </svg>
+</button>
+
+<div id="orderPnl"></div>
+
+<div id="loader" class="lds-ring" style="display:none;">
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+
+<div class="modal fade" id="errorModal" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Error</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p id="modalMessage"></p>
+      </div>
+    </div>
+  </div>
 </div>

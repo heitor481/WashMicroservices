@@ -69,3 +69,184 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+
+/*Card*/
+
+.card {
+    height: 400px;
+}
+
+.card.providers{
+    height: 100px;
+}
+
+.card img {
+    width: 100%;
+    height: 80%;
+}
+
+.card:hover {
+    background-color: #b1dae7;
+}
+
+.card-selected {
+background-color: #b1dae7;
+}
+
+.container {
+    padding: 2px 16px;
+}
+
+.modal-header {
+    background-color: #b1dae7;
+}
+
+/*Loader*/
+
+.lds-ring {
+    display: inline-block;
+    position: fixed;
+    width: 80px;
+    height: 80px;
+    left: 50%;
+    top: 50%;
+}
+
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: fixed;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid #b1dae7;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #b1dae7 transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/*Order ticket */
+
+#register {
+    width: 20em;
+    margin: auto;
+}
+
+#ticket {
+    background: white;
+    margin: 0 1em;
+    padding: 1em;
+    box-shadow: 0 0 5px rgba(0,0,0,.25);
+}
+
+#ticket h1 {
+    text-align: center;
+}
+
+#ticket table {
+    font-family: monospace;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#ticket td, #ticket th {
+    padding: 5px;
+}
+
+#ticket th, #ticket td {
+    text-align: left;
+}
+
+#ticket #total {
+    text-align: right;
+}
+
+#ticket tfoot th {
+    border-top: 1px solid black;
+}
+
+/*Buttons*/
+
+.cta {
+    position: relative;
+    margin: auto;
+    padding: 12px 18px;
+    transition: all 0.2s ease;
+    border: none;
+    background: none;
+}
+
+.cta:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 50px;
+    background: #b1dae7;
+    width: 45px;
+    height: 45px;
+    transition: all 0.3s ease;
+}
+
+.cta span {
+    position: relative;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #234567;
+}
+
+.cta svg {
+    position: relative;
+    top: 0;
+    margin-left: 10px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #234567;
+    stroke-width: 2;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
+}
+
+.cta:hover:before {
+    width: 100%;
+    background: #b1dae7;
+}
+
+.cta:hover svg {
+    transform: translateX(0);
+}
+
+.cta:active {
+    transform: scale(0.95);
+}
+
+.list-item{
+    padding: 2% 0%;
+}
