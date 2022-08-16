@@ -7,18 +7,19 @@ function DisplayProviders() {
         callback: function (res) {
 
             if (res) {
+
+                $("#providers").empty();
+
                 res.forEach(r => {
-                    var newEl = `
-                        <li class="splide__slide">   
+                    var newEl = ` 
                         <div class="card providers" data-id="${r.id}" onclick="setElementSelected(this, 'providers')">
                         <div class="container">
                         <h4><b>${r.name}</b></h4> 
                         <p>$ ${r.price}</p> 
                         </div>
-                    </div>
-                    </li>`;
+                    </div>`;
 
-                    $("#providers .splide__list").append(newEl);
+                    $("#providers").append(newEl);
                 });
 
                 $("#providers").show();

@@ -34,17 +34,20 @@
             </div>
         </nav>
     </header>
+
+    <img src="/images//washmachine.png" style="position:fixed;bottom:0;right:3%;z-index:-9;width:300px"/>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - WashClothes
-        </div>
-    </footer>
+    <div id="loader" class="lds-ring" style="display:none;">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

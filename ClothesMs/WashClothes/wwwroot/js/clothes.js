@@ -7,19 +7,20 @@ function DisplayClothes() {
         callback: function (res) {
 
             if (res) {
+
+                $("#clothes").empty();
+
                 res.forEach(r => {
-                    var newEl = `
-                        <li class="splide__slide">    
+                    var newEl = `  
                             <div class="card" data-id="${r.id}" onclick="setElementSelected(this, 'clothes')">
                                 <img src="${r.image}">
                                 <div class="container">
                                     <h4><b>${r.type}</b></h4>
                                     <p>${r.color}</p>
                                 </div>
-                            </div>
-                        </li>`;
+                            </div>`;
 
-                    $("#clothes .splide__list").append(newEl);
+                    $("#clothes").append(newEl);
                 });
 
                 $("#clothes").show();

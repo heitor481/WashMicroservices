@@ -74,7 +74,8 @@ body {
 /*Card*/
 
 .card {
-    height: 400px;
+    height: 350px;
+    border-radius: 5%;
 }
 
 .card.providers{
@@ -84,6 +85,7 @@ body {
 .card img {
     width: 100%;
     height: 80%;
+    border-radius: inherit;
 }
 
 .card:hover {
@@ -94,12 +96,22 @@ body {
 background-color: #b1dae7;
 }
 
-.container {
+.card .container {
     padding: 2px 16px;
+    border-top: 1px solid rgba(0,0,0,.125);
 }
 
 .modal-header {
     background-color: #b1dae7;
+}
+
+#clothes, #providers {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+    -webkit-column-gap: 3em;
+    -moz-column-gap: 3em;
+    column-gap: 3em;
 }
 
 /*Loader*/
@@ -247,6 +259,14 @@ background-color: #b1dae7;
     transform: scale(0.95);
 }
 
+.cta:focus {
+    outline:none;
+}
+
 .list-item{
     padding: 2% 0%;
+}
+
+body {
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgb(255 255 255) 0%, rgb(222 238 240 / 94%) 55%, rgb(231 239 241 / 93%) 100%);
 }

@@ -1,8 +1,8 @@
 ﻿
 function GenerateOrder() {
 
-    const clotheId = $("#clothes .splide__list .card-selected").first().attr("data-id");
-    const providerId = $("#providers .splide__list .card-selected").first().attr("data-id");
+    const clotheId = $("#clothes .card-selected").first().attr("data-id");
+    const providerId = $("#providers .card-selected").first().attr("data-id");
 
     const reqOrder = {
         type: "GET",
@@ -11,6 +11,9 @@ function GenerateOrder() {
         callback: function (res) {
 
             if (res) {
+
+                $("#orderPnl").empty();
+
                 var newEl = `
                     <div id="register">
                       <div id="ticket">

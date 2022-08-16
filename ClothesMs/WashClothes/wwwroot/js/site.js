@@ -5,16 +5,6 @@
 
 $(document).ready(function () {
 
-    var elms = document.getElementsByClassName('splide');
-    for (var i = 0; i < elms.length; i++) {
-        new Splide(elms[i], {
-            type: "loop",
-            perPage: 3,
-            arrows: false
-        })
-        .mount();
-    }
-
     DisplayClothes();
 
     $("#btnDisplayClothes").click(function () {

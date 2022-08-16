@@ -1,10 +1,14 @@
 ﻿
 loading = (isLoading) => {
-    var opacity = isLoading ? 0.3 : 1;
+
+    var opacity = isLoading ? 0.25 : 1;
+
     if (isLoading)
         $("#loader").show();
     else
         $("#loader").hide();
+
+    $('.container').css("opacity", opacity);
 }
 
 doRequest = (reqData) => {
@@ -35,10 +39,9 @@ function setElementSelected(el, id) {
     $("#" + id + " .card-selected").each((idx, c) => $(c).removeClass("card-selected"));
     $(el).addClass("card-selected");
 
-    const clotheId = $("#clothes .splide__list .card-selected").first().length;
-    const providerId = $("#providers .splide__list .card-selected").first().length;
+    const clotheId = $("#clothes .card-selected").first().length;
+    const providerId = $("#providers .card-selected").first().length;
 
     if (clotheId && providerId)
         $("#btnGenerateOrder").show();
-
 }
